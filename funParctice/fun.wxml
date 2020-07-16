@@ -1,0 +1,61 @@
+<!--miniprogram/pages/funParctice/fun.wxml-->
+<view class="main">
+  <input type="text" class="title" placeholder="题目内容(单选题)" ></input>
+  <textarea class="text_content"  bindinput="getValueLength"   maxlength="{{max}}" placeholder="这是题目的内容,9张图片" auto-height></textarea>
+  <view class="image_content">
+    <view class='image' wx:for="{{img_url}}" wx:key="{{index}}">
+      
+      <image class="btncancel" bindtap="cancelimage" data-id="{{index}}" src="./delete-icon copy.png"></image>
+      <image class="moment_img" src="{{item}}"></image>
+    </view>
+    <view class='image' style='display:{{hideAdd?"none":"block"}}'>
+      <image bindtap="chooseimage" class="moment_img" src='./addImg.png'></image>
+    </view>
+ </view>
+ <view class="currentWordNumber">{{currentWordNumber|0}}/{{max}}</view>
+</view>
+
+<view class="main">
+  <input type="text" class="title" placeholder='选项'></input>
+  <view wx:for="{{options}}" wx:key="{{index}}">
+     <view class="option-item">
+       <text class="character {{item.chosen?'chosen':''}}" data-id="{{index}}" bindtap="chose">{{item.character}}</text>
+       
+       <view class="option-content">
+        <textarea data-id="{{index}}" value="{{item.value}}" placeholder="请输入选项" bindinput="bindinput" auto-height></textarea>
+        <image wx:if="{{!(item.img)}}" data-id="{{index}}"bindtap="chooseOptionimage" class="option_img" src='./icon_pic.png'></image>
+        <image wx:else class="option_img" src="{{item.img}}"></image>
+      </view>
+       
+       <image class="img" src="./deleteOption.png" data-id="{{index}}" bindtap = "delOption" />
+     </view>
+  </view>
+  <view>
+    <view class="add-option-item" bindtap = "addOption" data-id="0">
+      <image class="img" src="./addOption.png"/>
+      <view class="btnText">添加选项</view>
+    </view>
+  </view>
+</view>
+
+
+
+
+<view class="main">
+  <input type="text" class="title" placeholder='题目解析(选填)'></input>
+  <textarea class="text_content" placeholder="这是题目的解析,9张图片" auto-height></textarea>
+  <view class="image_content">
+    <view class='image' wx:for="{{img_url}}">
+      <image class="moment_img" src="{{item}}"></image>
+      <image class="btncancel" bindtap="cancelimage" data-id="{{index}}" src="./delete-icon copy.png"></image>
+
+    </view>
+    <view class='image' style='display:{{hideAdd?"none":"block"}}'>
+      <image bindtap="chooseimage" class="moment_img" src='./addImg.png'></image>
+    </view>
+ </view>
+  <view class="currentWordNumber">{{currentWordNumber|0}}/{{max}}</view>
+
+</view>
+
+<button id='save_button'>保存</button>

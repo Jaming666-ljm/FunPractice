@@ -1,0 +1,128 @@
+/* miniprogram/pages/funParctice/fun.wxss */
+.page{
+  padding: 20px
+ }
+.text_content{
+  margin-bottom: 40rpx;
+}
+.title{
+ width: 100%;
+ margin-bottom: 10rpx;
+ padding: 5px;
+ font-weight: bold;
+}
+.image{
+ width:31%;
+ height: 100px;
+ padding: 2px;
+ position: relative;
+
+}
+.moment_img{
+ width: 98px;
+ height: 98px;
+}
+.image_content{
+ width: 100%;
+ display: flex;
+ flex-wrap: wrap;
+ margin-bottom: 20px;
+}
+.btncancel{
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(-50%,-50%);
+}
+.currentWordNumber{
+  float: right;
+  bottom: 5rpx;
+  color: gainsboro;
+}
+.main{
+ width:90%;
+ margin: 20rpx auto;
+ border-radius: 5px;
+ background-color: white;
+ box-shadow: 2rpx 4rpx 5rpx 0 rgba(0, 0,0, 0.1),
+             3rpx 6rpx 15rpx 0 rgba(0, 0,0, 0.05),
+             -2rpx -2rpx 5rpx 0 rgba(0, 0,0, 0.1),
+             -3rpx -3rpx 15rpx 0 rgba(0, 0,0, 0.05);
+}
+/*选项*/
+.option-item{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 60rpx;
+  margin-bottom: 20rpx;
+}
+.option-content{
+  display: flex;
+  justify-content: space-between;
+  background-color:rgb(252, 251, 254);
+  border:1px solid gainsboro;
+  border-radius: 5px;
+  margin-bottom: 10rpx;
+}
+/*选项 文本框*/
+.option-content textarea{
+  display: inline-block;
+  width:300rpx;
+  color:#000000;
+  padding-left: 20rpx;
+  padding-top:8rpx ;
+}
+/*选项 图片*/
+.img{
+  width:46rpx;
+  height: 46rpx;
+  margin-right: 20rpx;
+}
+.option_img{
+  width:46rpx;
+  height: 46rpx;
+  vertical-align: middle;
+  margin:8rpx 8rpx
+}
+.character{
+  width:46rpx;
+  height: 46rpx;
+  margin-left: 20rpx;
+  border:1px solid gainsboro;
+  border-radius: 100%;
+  text-align: center;
+  color: rgb(114, 118, 153);
+}
+.chosen{
+  background-color: rgb(21, 193, 156);
+  color: white;
+}
+.add-option-item{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 60rpx;
+  margin-left: 140rpx;
+}
+/*添加选项*/
+.btnText{
+  display: flex;
+  align-items: center;
+  height: 60rpx;
+  font-size: 28rpx;
+  font-weight: 500;
+  color:#78a2f0;
+  padding-left: 20rpx;
+}
+#save_button{
+  /* position: fixed; */
+  margin:20px auto;
+  color: white;
+  background-color: rgb(21, 193, 156);
+  border-radius: 25px;
+  width: 60%
+}
